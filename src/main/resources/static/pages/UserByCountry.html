@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Users</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/player.css">
+
+</head>
+<body>
+
+<div class="header" style="background-size: 100% 100%; background-image: url('/images/nasa.jpg')">
+  <h1>Jonathan Tavarez...</h1>
+  <p> <b>SBA HTML, CSS & JavaScript</b> </p>
+</div>
+
+
+<div class="navbar">
+  <a href="../index.html" class="active">Home</a>
+  <a href="survey.html">Survey</a>
+  <a href="UserByCountry.html">Users</a>
+  <a href="todolist.html">Utilis</a>
+  <a href="donation.html">Buy me a coffee</a>
+  <a href="musicplayer.html" class="right">Music Player</a>
+</div>
+
+<div class="container">
+
+  <h2>My Customers</h2>
+
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+  <table id="myTable">
+    <tr class="header">
+      <th style="width:60%;">Name</th>
+      <th style="width:40%;">Country</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Berglunds snabbkop</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Koniglich Essen</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <td>North/South</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Paris specialites</td>
+      <td>France</td>
+    </tr>
+  </table>
+
+  <script>
+    function myFunction() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+
+
+</div>
+
+<div class="footer">
+  <h1>Full Stack Java Development</h1>
+</div>
+
+</body>
+</html>
+
+</body>
+</html>
