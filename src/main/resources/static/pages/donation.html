@@ -7,7 +7,24 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/donation.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script>
+    function validateEmail(email) {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+    }
 
+    function validateForm(event) {
+      const email = document.getElementById('email').value;
+      if (!validateEmail(email)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault(); // Prevent form submission
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelector('form').addEventListener('submit', validateForm);
+    });
+  </script>
 </head>
 <body>
 
@@ -15,7 +32,6 @@
   <h1>Jonathan Tavarez...</h1>
   <p> <b>SBA HTML, CSS & JavaScript</b> </p>
 </div>
-
 
 <div class="navbar">
   <a href="../index.html" class="active">Home</a>
@@ -32,7 +48,7 @@
   <div class="row">
     <div class="col-75">
       <div class="container">
-        <form action="/index.html" >
+        <form action="/index.html">
 
           <div class="row">
             <div class="col-50">
@@ -70,7 +86,7 @@
               <label for="cname">Name on Card</label>
               <input type="text" id="cname" name="cardname" placeholder="John More Doe">
               <label for="ccnum">Credit card number</label>
-              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" pattern="\d{4}-?\d{4}-?\d{4}-?\d{4}" title="Please enter a valid credit card number">
               <label for="expmonth">Exp Month</label>
               <input type="text" id="expmonth" name="expmonth" placeholder="September">
               <div class="row">
@@ -107,16 +123,11 @@
     </div>
   </div>
 
-
-
 </div>
 
 <div class="footer">
   <h1>Full Stack Java Development</h1>
 </div>
-
-</body>
-</html>
 
 </body>
 </html>
